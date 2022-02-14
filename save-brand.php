@@ -8,12 +8,7 @@
 </head>
 <body>
 
-<?php
-       $brandName = $_POST['brandName'];
-       // checking if brand name alreay exist or not
-    
 
-  ?>
 
 
 <?php
@@ -25,20 +20,34 @@
 
 
 
-            // if(empty(trim($brandName)) || strlen($brandName)>100 || (empty(trim($color))) || strlen($color)>10)
-            // {
-            //     echo "There are already some Brand & Color names added to the shoe details form. If you love other brands or colors, then you can make your choice <br><br> <a href='shoe-form.php'>Click this link to redirect to shoe details form</a>";
-                
-            //     $ok= false;
 
-            // }
-
-            if(empty(trim($brandName)) || (empty(trim($color)  || strlen($brandName)>100  || strlen($color)>10 )))
+            if(empty(trim($brandName)))
             {
+                 echo "Brand Name should not be empty";
                 $ok= false;
-                header("Location: shoe-form.php"); 
-
+                
+                
             }
+
+            else if(strlen($brandName) > 100)
+            {
+               echo "Brand Name should be smaller than 100 characters";
+                $ok =false;
+            }
+
+            
+            if(empty(trim($color)))
+            {
+                echo "<br>Color field should not be empty";
+                $ok= false;
+            }
+
+            else if(strlen($color) > 100)
+            {
+                echo "<br>Color field should be smaller than 100 characters";
+                $ok=false;
+            }
+
 
             
 
