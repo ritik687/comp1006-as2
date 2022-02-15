@@ -8,10 +8,10 @@
 <?php
 
 
-// get the selected brandId from the url parameter using the $_GET array because get array will show you the brandId in the URL
-$brandId = $_GET['brandId'];
+// get the selected shoeId from the url parameter using the $_GET array because get array will show you the shoeId in the URL
+$shoeId = $_GET['shoeId'];
 
-if (is_numeric($brandId)) {
+if (is_numeric($shoeId)) {
 
     // connect
     // $db = new PDO('mysql:host=172.31.22.43;dbname=Ram200495974', 'Ram200495974', 'y4O4M_hDnR');
@@ -20,9 +20,9 @@ if (is_numeric($brandId)) {
     require "database.php";
 
     // running the sql delete command
-    $sql = "DELETE FROM shoes WHERE brandId = :brandId"; // : the parameters
+    $sql = "DELETE FROM shoes WHERE shoeId = :shoeId"; // : the parameters
     $cmd = $db->prepare($sql);
-    $cmd->bindParam(':brandId', $brandId, PDO::PARAM_INT);
+    $cmd->bindParam(':shoeId', $shoeId, PDO::PARAM_INT);
     $cmd->execute();
 
     // disconnect

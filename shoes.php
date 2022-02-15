@@ -74,7 +74,7 @@
                   <td>' .$shoe['size']. '</td>
                   <td>' .$shoe['color']. '</td>
                   <td>' .$shoe['brandName']. '</td>
-                  <td><a href="delete-shoe.php?brandId=' . $shoe['brandId'] .'" 
+                  <td><a href="delete-shoe.php?shoeId=' . $shoe['shoeId'] .'" 
                      class="btn btn-outline-danger" type="button"  onclick="return deletingShoes();">Delete</a></td>
                   
                   
