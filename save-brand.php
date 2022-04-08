@@ -1,17 +1,10 @@
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Saving Brand...</title>
-</head>
-<body>
-
-
-
-
 <?php
+
+$title='Saving Brand';
+require 'includes/header.php';
+
+
                 // storing the values entered in the form in variables
                 $brandName = $_POST['brandName'];
                 // $color = $_POST['color'];

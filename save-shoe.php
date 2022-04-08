@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<?php
     
-     <title>Saving Movie Details......</title>
-   
+    $title='Saving Shoe details....';
+    require 'includes/header.php';
 
-</head>
-<body>
-    <?php
     
     // capture form inputs from the POST array and store each one in variable
     $shoeName = $_POST['shoeName'];

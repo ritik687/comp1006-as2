@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Deleting Shoes</title>
-</head>
-<body>
 <?php
+    
+    $title='Deleting Shoe....';
+    require 'includes/header.php';
 
 
 // get the selected shoeId from the url parameter using the $_GET array because get array will show you the shoeId in the URL

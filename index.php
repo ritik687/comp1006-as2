@@ -1,29 +1,14 @@
+<?php
+      $title ='Welcome';
+      require 'includes/header.php';
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-    <!-- Bootstrap Css link -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-    <!-- Google fonts link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quintessential&display=swap" rel="stylesheet">
-    <!-- Custom Css for google fonts -->
-    <link rel="stylesheet" type=text/css href="css/index.css" >
-
-    
-</head>
-<body>
-    <main class="container">
-            <h1 class = "display-1  text-white"> PHP FootLocker</h1>
+?>
+    <main class="container"> 
+             <h1 class = "display-1  text-white"> PHP FootLocker</h1>
             <p class="lead  text-white-50"> COMP1006-Assignment 1</p>
             <br>
             <br>
-            <!-- <p>Check out my top 5 collections <a href="shoes.php">list of Collections</a>!</p>
+             <!-- <p>Check out my top 5 collections <a href="shoes.php">list of Collections</a>!</p>
             <p>Click this link. <a href="brand-form.php">Add your most followed Brand & Color</a> </p>
             <p>Click this link. <a href="shoe-details.php">Add your favourite Footgear</a> </p> -->
 
@@ -49,12 +34,99 @@
                 <a href="shoe-form.php" class="btn btn-success" type="button">Add FootWear Details</a>
                 <a href="shoes.php" class="btn btn-success   btn-lg" >View the List</a>
               </div>
-
-              
-    </main>
-
+  <!-- <div class="welcome container-fluid">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="img/imageC-2.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/imageC-3.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/imageC-4.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div> -->
 
   
 
+   <!-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+     <ol class="carousel-indicators">
+       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+       <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+       <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+     </ol>
+
+     <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/imageC-2.jpg" class="d-block w-100" alt="...">
+        <div class=" carousel-caption d-none d-md-block">
+          <h5>First Slide Label</h5>
+          <p>....</p>
+
+          <div class="slider-btn">
+            <button class="btn btn-1">Our Services</button>
+            <button class="btn btn-2">Get a Quote </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="img/imageC-3.jpg" class="d-block w-100" alt="...">
+        <div class=" carousel-caption d-none d-md-block">
+          <h5>Second Slide Label</h5>
+          <p>....</p>
+
+          <div class="slider-btn">
+            <button class="btn btn-1">Our Services</button>
+            <button class="btn btn-2">Get a Quote </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="img/imageC-4.jpg" class="d-block w-100" alt="...">
+        <div class=" carousel-caption d-none d-md-block">
+          <h5>Third Slide Label</h5>
+          <p>....</p>
+
+          <div class="slider-btn">
+            <button class="btn btn-1">Our Services</button>
+            <button class="btn btn-2">Get a Quote </button>
+          </div>
+
+        </div>
+      </div>
+       
+     </div>
+     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+   </div> -->
+    </main>
+  
+  
 </body>
 </html>

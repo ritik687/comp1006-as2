@@ -1,0 +1,29 @@
+body{
+  /* margin: 0px;
+  background-image: url("../img/imageC-4.jpg");
+  width: 100%;
+  
+  background-size:cover;
+  background-position: stretch; */
+
+
+  font-family: 'IBM Plex Serif', serif;
+  }
+
+  .welcome{
+    margin: 50px auto;
+    width: 600px;
+  }
+
+  .welcome img{
+    border-radius: 20px;
+  }
+
+
+  .carousel-item{
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat scroll center scroll;
+    background-size: cover;
+  }
+

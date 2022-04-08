@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Collections</title>
-  <!-- Bootstrap Css link -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<?php
+    
+    $title='Shoes';
+    require 'includes/header.php';
+?>
+    
 
-<!-- Google fonts link -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Playfair+Display&family=Quintessential&display=swap" rel="stylesheet">
-<!-- Custom Css for google fonts -->
-<link rel="stylesheet" type=text/css href="css/shoes.css" >
-
-
-
-<!-- javascript used for deletion  -->
-<script type="text/javascript" src="js/deletion.js"></script>
-</head>
-<body>
     <h1 class = "display-4 text-center" ><u>Shoes Collections</u></h1>
     <br>
     <br>

@@ -1,27 +1,9 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Shoe Details</title>
-
-    <!-- Bootstrap Css link -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-    <!-- Google fonts link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Playfair+Display&family=Quintessential&display=swap" rel="stylesheet">
-    
-    <!-- Custom Css for google fonts -->
-    <link rel="stylesheet" type=text/css href="css/shoe-form.css" >
-
-    
-</head>
-
-
 <?php
+
+    $title='Shoe Form';
+    require 'includes/header.php';
+    
+
     //check for movieId in the URL. If there is 1, fetch the selected movie from the database for display
 
     $shoeId = null;
