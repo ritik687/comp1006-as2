@@ -36,11 +36,11 @@
     <table class="table table-striped table-hover  table-borderless ">
       <thead>
         <tr>
-        <th>Shoes</th>
-        <th>Size</th>
-        <th>Colour</th>
-        <th>Brand</th>
-        <th>Delete Action</th>
+        <th style="text-align: center">Shoes</th>
+        <th style="text-align: center">Size</th>
+        <th style="text-align: center">Colour</th>
+        <th style="text-align: center">Brand</th>
+        <th style="text-align: center"> Actions</th>
         </tr>
       </thead>
 
@@ -70,12 +70,15 @@
                foreach($shoes as $shoe)
                {
                  echo '<tr>
-                  <td>' .$shoe['shoeName']. '</td>
-                  <td>' .$shoe['size']. '</td>
-                  <td>' .$shoe['color']. '</td>
-                  <td>' .$shoe['brandName']. '</td>
-                  <td><a href="delete-shoe.php?shoeId=' . $shoe['shoeId'] .'" 
-                     class="btn btn-outline-danger" type="button"  onclick="return deletingShoes();">Delete</a></td>
+                  <td style="text-align: center">' .$shoe['shoeName']. '</td>
+                  <td style="text-align: center">' .$shoe['size']. '</td>
+                  <td style="text-align: center">' .$shoe['color']. '</td>
+                  <td style="text-align: center">' .$shoe['brandName']. '</td>
+                  <td style="text-align: center"> <a href="shoe-form.php?shoeId='. $shoe['shoeId'] . '" 
+                  class="btn btn-outline-primary" type="button"  ">Edit</a>
+                  
+                  <a href="delete-shoe.php?shoeId=' . $shoe['shoeId'] .'" 
+                     class="btn btn-outline-danger" type="button"  onclick="return deletingShoes()">Delete</a></td>
                   
                   
                   </tr>';
