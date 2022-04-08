@@ -19,4 +19,5 @@ catch(PDOException $e)
 {
     echo "Connection failed".$e->getMessage();
 }
-?>
+
+// since file is all PHP (no HTML), closing php tag is optional 

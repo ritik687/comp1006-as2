@@ -1,10 +1,3 @@
-<?php
-//The Require() function is used to put data of one PHP file to another PHP file. If there any errors then the require() function produces a warning and a fatal error and stops the execution of the script i.e. the script will continue to execute.(https://www.c-sharpcorner.com/UploadFile/051e29/include-and-require-in-php/#:~:text=The%20Require()%20function%20is,script%20will%20continue%20to%20execute.)
-
-// bonus point work
-      require "database.php";
-
-?>
 
 
 <!DOCTYPE html>
@@ -54,7 +47,7 @@
               <div class="d-grid gap-4    d-md-auto      col-4">
                 <a href="brand-form.php"   class="btn btn-success" type="button">Add Brands & Colours</a>
                 <a href="shoe-form.php" class="btn btn-success" type="button">Add FootWear Details</a>
-                <a href="shoes.php" class="btn btn-success   btn-lg" type="button">View the List</a>
+                <a href="shoes.php" class="btn btn-success   btn-lg" >View the List</a>
               </div>
 
               

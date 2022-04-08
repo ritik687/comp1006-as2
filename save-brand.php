@@ -66,7 +66,7 @@
                 // //set up the sql insert command to add a new brand and color :this indicates the placeholder
 
 
-                require "database.php";
+                require "includes/database.php";
 
                     $sql = "INSERT INTO brands(brandName, color) VALUES(:brandName, :color)";
 

@@ -56,7 +56,7 @@
                     // $db= new PDO('mysql:host=172.31.22.43;dbname=Ram200495974','Ram200495974', 'y4O4M_hDnR');
                     // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// debugging
                   
-                    require "database.php";
+                    require "includes/database.php";
 
 
                     

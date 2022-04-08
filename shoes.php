@@ -16,7 +16,7 @@
 
 
 <!-- javascript used for deletion  -->
-<script type="text/javascript" src="deletion.js"></script>
+<script type="text/javascript" src="js/deletion.js"></script>
 </head>
 <body>
     <h1 class = "display-4 text-center" ><u>Shoes Collections</u></h1>
@@ -48,7 +48,7 @@
           <?php
               //  $db= new PDO('mysql:host=172.31.22.43;dbname=Ram200495974','Ram200495974', 'y4O4M_hDnR');
 
-               require "database.php";
+               require "includes/database.php";
 
                $sql ="SELECT * FROM shoes INNER JOIN brands ON shoes.brandId = brands.brandId";
                
@@ -81,6 +81,8 @@
                   </tr>';
     
                   // <td>' . $shoe['brandId']. '</td> --> this will display the brandId;
+
+
                   
                }
     
