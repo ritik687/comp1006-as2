@@ -5,12 +5,16 @@ color varchar(100) not null
 alter table colors auto_increment 1000;
 
 
+
 CREATE TABLE brands
 (
 brandId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 brandName VARCHAR(100) NOT NULL
 
 );
+
+
+
 
 CREATE TABLE shoes(
 shoeId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

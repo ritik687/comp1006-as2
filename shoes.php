@@ -33,49 +33,58 @@
       <tbody>
           <?php
               //  $db= new PDO('mysql:host=172.31.22.43;dbname=Ram200495974','Ram200495974', 'y4O4M_hDnR');
+              try
+              {
 
-               require "includes/database.php";
+                
+                  require "includes/database.php";
 
-               $sql ="SELECT * FROM shoes INNER JOIN brands ON shoes.brandId = brands.brandId INNER JOIN colors ON shoes.colorId=colors.colorId";
-               
-              //  in this we are fetching the shoes but also fetching the related brand to each shoe with the help of the primary key that is brandId
-              // this INNER JOIN will join one table with the another table based on a foreign key, primary key relationship
-    
-               $cmd = $db->prepare($sql);
-               $cmd->execute();
-
-
-               //The fetchAll() method allows you to fetch all rows from a result set associated with a PDOStatement object into an array.
-
-               $shoes =$cmd->fetchAll();
-
-               
-    
-               // loop through the records , new row for each record , new column for each value 
-    
-               foreach($shoes as $shoe)
-               {
-                 echo '<tr>
-                  <td style="text-align: center">' .$shoe['shoeName']. '</td>
-                  <td style="text-align: center">' .$shoe['size']. '</td>
-                  <td style="text-align: center">' .$shoe['color']. '</td>
-                  <td style="text-align: center">' .$shoe['brandName']. '</td>
-                  <td style="text-align: center"> <a href="shoe-form.php?shoeId='. $shoe['shoeId'] . '" 
-                  class="btn btn-outline-primary" type="button"  ">Edit</a>
+                  $sql ="SELECT * FROM shoes INNER JOIN brands ON shoes.brandId = brands.brandId INNER JOIN colors ON shoes.colorId=colors.colorId";
                   
-                  <a href="delete-shoe.php?shoeId=' . $shoe['shoeId'] .'" 
-                     class="btn btn-outline-danger" type="button"  onclick="return deletingShoes()">Delete</a></td>
-                  
-                  
-                  </tr>';
-    
-                  // <td>' . $shoe['brandId']. '</td> --> this will display the brandId;
+                  //  in this we are fetching the shoes but also fetching the related brand to each shoe with the help of the primary key that is brandId
+                  // this INNER JOIN will join one table with the another table based on a foreign key, primary key relationship
+        
+                  $cmd = $db->prepare($sql);
+                  $cmd->execute();
 
+
+                  //The fetchAll() method allows you to fetch all rows from a result set associated with a PDOStatement object into an array.
+
+                  $shoes =$cmd->fetchAll();
 
                   
-               }
-    
-               $db=null;
+        
+                  // loop through the records , new row for each record , new column for each value 
+        
+                  foreach($shoes as $shoe)
+                  {
+                    echo '<tr>
+                      <td style="text-align: center">' .$shoe['shoeName']. '</td>
+                      <td style="text-align: center">' .$shoe['size']. '</td>
+                      <td style="text-align: center">' .$shoe['color']. '</td>
+                      <td style="text-align: center">' .$shoe['brandName']. '</td>
+                      <td style="text-align: center"> <a href="shoe-form.php?shoeId='. $shoe['shoeId'] . '" 
+                      class="btn btn-outline-primary" type="button"  ">Edit</a>
+                      
+                      <a href="delete-shoe.php?shoeId=' . $shoe['shoeId'] .'" 
+                        class="btn btn-outline-danger" type="button"  onclick="return deletingShoes()">Delete</a></td>
+                      
+                      
+                      </tr>';
+        
+                      // <td>' . $shoe['brandId']. '</td> --> this will display the brandId;
+
+
+                      
+                  }
+        
+                  $db=null;
+              }
+
+              catch(Exception $error)
+              {
+                 header('location:error.php');
+              }
 
 
           ?>
