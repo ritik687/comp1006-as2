@@ -3,7 +3,7 @@
     $title='Shoe Form';
     require 'includes/header.php';
     
-
+    try{
     //check for movieId in the URL. If there is 1, fetch the selected movie from the database for display
 
     $shoeId = null;
@@ -45,11 +45,19 @@
 
                  // disconnect
                  $db ='null';
+                 
 
 
         }
 
     }
+}
+
+catch(Exception $error)
+{
+      // an error happened so redirect to the error page 
+    header('location:error.php');
+}
 ?>
 <body>
 
@@ -112,8 +120,9 @@
 
                       <?php
                      
-
-                    require "includes/database.php";
+                    try
+                    {
+                        require "includes/database.php";
 
                         // selecting all the columns from the brands
                        
@@ -145,8 +154,18 @@
                          
 
                        }
+
+                    }
+
+                    catch(Exception $error)
+                        {
+                            // an error happened so redirect to the error page 
+                            echo '<script>location.href="error.php";</script>';
+                        }
+                    
                        
                        ?>
+                       
  
                      </select>
                  </fieldset>
@@ -164,6 +183,8 @@
                     <select name="brandId" id="brandId" class="form-control form-select" aria-label="Default select example" required>
                       
                       <?php
+
+                      try{
                         require "includes/database.php";
                        $sql ="SELECT * FROM brands";
                        $cmd =$db->prepare($sql);
@@ -187,6 +208,14 @@
                        }
             
                        $db =null;
+
+                    }
+
+                    catch(Exception $error)
+                        {
+                            // an error happened so redirect to the error page 
+                            echo '<script>location.href="error.php";</script>';
+                        }
                       ?>
 
                     </select>
