@@ -19,6 +19,56 @@
 
     
 </head>
+
+
+<?php
+    //check for movieId in the URL. If there is 1, fetch the selected movie from the database for display
+
+    $shoeId = null;
+    $shoeName = null;
+    $size = null;
+    $brandId =null;
+    $colorId=null;
+
+
+        // if we add a new shoe there will be no shoeId for that purpose we use this if statment or if by chance shoe id is any character.
+    if(isset($_GET['shoeId']))
+    {
+        if(is_numeric($_GET['shoeId']))
+        {
+                // if we have a number in the URL, store in a variable 
+                $shoeId= $_GET['shoeId'];
+
+                require 'includes/database.php';
+                $sql ="SELECT * FROM shoes WHERE shoeId = :shoeId";
+
+                $cmd = $db->prepare($sql);
+                $cmd->bindParam(':shoeId',$shoeId,PDO::PARAM_INT);
+
+                //execute the deletion
+                $cmd->execute(); // this will go to the database and it will try to look up the movie with that primary key value that we can see in our address bar
+
+                // use the PDO fetch command instead of fetchAll as we are getting only one row not many
+                $shoe = $cmd->fetch();
+
+                // populate each field from the movies record
+                $shoeName = $shoe['shoeName'];
+                $size = $shoe['size'];
+                
+                $brandId = $shoe['brandId'];
+                $colorId =$shoe['colorId'];
+
+
+
+
+                 // disconnect
+                 $db ='null';
+
+
+        }
+
+    }
+?>
 <body>
 
 
@@ -55,7 +105,7 @@
                     <label for="shoeName" class="col-sm-1 col-form-label">Shoe:</label>
 
                     <div class="col-sm-3">
-                    <input name="shoeName" id="shoeName" class="form-control" required maxlength="100"  placeholder="Name" oninvalid="this.setCustomValidity('Shoe Name is Required')"    oninput="setCustomValidity('')" /> 
+                    <input name="shoeName" id="shoeName" class="form-control" required maxlength="100"  placeholder="Name" oninvalid="this.setCustomValidity('Shoe Name is Required')"    oninput="setCustomValidity('')"   value="<?php echo $shoeName?>"/> 
                     </div> 
                 </fieldset>
 
@@ -65,7 +115,7 @@
                     <label for="size" class="col-sm-1 col-form-label">Size:</label>
 
                     <div class="col-sm-3">
-                    <input name="size" id="size"  class="form-control" required  type="number"   min="6.5" max="15" step="0.5" placeholder="US only"  oninvalid="this.setCustomValidity('Size is Required')"    oninput="setCustomValidity('')">
+                    <input name="size" id="size"  class="form-control" required  type="number"   min="6.5" max="15" step="0.5" placeholder="US only"  oninvalid="this.setCustomValidity('Size is Required')"    oninput="setCustomValidity('')"    value="<?php echo $size?>">
                     </div>
                 </fieldset>
 
@@ -74,36 +124,46 @@
                 <!-- third fieldset -->
                 <fieldset class="row mb-3">
                       
-                      <legend class="col-form-label col-sm-1 pt-0">Colours:</legend>
+                      <legend class="col-form-label col-sm-1 pt-0">Colors:</legend>
                       <div class="col-sm-3">
 
 
                       <?php
-                    //    $db = new PDO('mysql:host=172.31.22.43;dbname=Ram200495974', 'Ram200495974','y4O4M_hDnR');
-                    //    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// debugging
+                     
 
                     require "includes/database.php";
 
                         // selecting all the columns from the brands
-                        // Bonus work
-                       $sql ="SELECT * FROM brands ORDER BY color";
+                       
+                       $sql ="SELECT * FROM colors";
                        $cmd =$db->prepare($sql);
                        
                        $cmd->execute();
-                       $brands = $cmd->fetchAll();
+                       $colors = $cmd->fetchAll();
 
                        
                     //    echo '<option selected>--Select--</option>';
-                       foreach($brands as $brand){
+                       foreach($colors as $color)
+                       {
+                        if($color['colorId'] == $colorId)
+                        {
 
                            echo '<div class="form-check    form-check-inline">'; 
-                           echo '<input name= brandId   id=brandId  class="form-check-input"  type= radio  required >';
-                           echo '<label for=brandId  class="form-check-label">'.$brand['color'].'</label>';
+                           echo '<input name= colorId   id=colorId  class="form-check-input"  type= radio  required  value= "'.$color['colorId'].'" checked>';
+                         echo '<label for=brandId  class="form-check-label">'.$color['colorId'].'</label>';
                            echo '</div>';
+                        }
+                        else{
+                            echo '<div class="form-check    form-check-inline">'; 
+                            echo '<input name= colorId   id=colorId  class="form-check-input"  type= radio  required value= "'.$color['colorId'].'">';
+                            echo '<label for=colorId  class="form-check-label">'.$color['color'].'</label>';
+                            echo '</div>';
+
+                        }
                          
 
                        }
-                       $db =null;
+                       
                        ?>
  
                      </select>
@@ -120,12 +180,10 @@
 
                     <div class="col-sm-3">
                     <select name="brandId" id="brandId" class="form-control form-select" aria-label="Default select example" required>
+                      
                       <?php
-                       $db = new PDO('mysql:host=172.31.22.43;dbname=Ram200495974', 'Ram200495974','y4O4M_hDnR');
-                       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// debugging
-
-
-                       $sql ="SELECT * FROM brands  ORDER BY brandName";
+                        require "includes/database.php";
+                       $sql ="SELECT * FROM brands";
                        $cmd =$db->prepare($sql);
                        
                        $cmd->execute();
@@ -135,8 +193,13 @@
                     //    echo '<option selected>--Select--</option>';
                        foreach($brands as $brand){
 
+                        if($brand['brandId']==$brandId){
+                            echo '<option selected value= "'.$brand['brandId'].'">' .  $brand['brandName'] . '</option>';   
+                        } 
                            
+                            else{
                            echo '<option value= "'.$brand['brandId'].'">' .  $brand['brandName'] . '</option>';
+                            }
                          
 
                        }
@@ -147,6 +210,10 @@
                     </select>
                     </div>
                 </fieldset>
+
+                <!-- this line is added will only be visible in the view page source section because the type is hidden 
+                And moreover we are going to change the existing shoe, so we need the id of the shoe on the save-shoe.php-->
+                <input name="shoeId" id="shoeId" value="<?php echo $shoeId; ?>" type="hidden">
                 
                 
                 <button class="btn btn-primary">Save</button>

@@ -17,6 +17,16 @@
     $size = $_POST['size'];
 
     $brandId = $_POST['brandId'];
+    $colorId =$_POST['colorId'];
+
+    $shoeId = $_POST['shoeId'];
+
+    
+  
+    
+    /* this shoeId will be null while inserting but not null while updating. 
+       Whats the scenario is, when we add a new shoe, the shoeId= null; Go to the view page source of the shoe-form.php. It will display the shoeId="".   When we Click any shoe on the shoes page, this shoeId="number".
+    */
 
     //input validations
     $ok= "true";
@@ -53,15 +63,23 @@
                 if($ok=true)
                 {
     
-                    // $db= new PDO('mysql:host=172.31.22.43;dbname=Ram200495974','Ram200495974', 'y4O4M_hDnR');
-                    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);// debugging
                   
                     require "includes/database.php";
 
 
                     
+                    // if we have shoeId then update, if null then insert it
+                    if(empty($shoeId))
+                    {
                     /* setup an SQL INSERT command with placeholders for our three values : indicates a placeholder  or parameter*/
-                    $sql = "INSERT INTO shoes(shoeName,  size, brandId) VALUES(:shoeName,  :size, :brandId)";
+                    $sql = "INSERT INTO shoes(shoeName,size,brandId,colorId) VALUES(:shoeName,:size,:brandId,:colorId)";
+                    }
+
+                    else{
+
+                      $sql = "UPDATE shoes SET shoeName=:shoeName, size=:size, brandId= :brandId, colorId=:colorId WHERE shoeId= :shoeId";
+                      //make sure u should have the where clause. and also number of tokens in the update statement should match the no of parameters that we binding
+                    }
                    
 
 
@@ -81,6 +99,12 @@
                     
                     $cmd->bindParam(':size',$size, PDO::PARAM_STR); // there is nothing decimal in this case, we have to str only
                     $cmd->bindParam(':brandId',$brandId, PDO::PARAM_INT);
+                    $cmd->bindParam(':colorId',$colorId, PDO::PARAM_INT);
+
+                    if(!empty($shoeId))
+                    {
+                      $cmd->bindParam(':shoeId',$shoeId,PDO::PARAM_INT);
+                    }
 
 
 
@@ -99,7 +123,7 @@
                     echo "Shoe Saved";
 
                     // // bonus point work
-                    header("Location: shoes.php");   
+                    // header("Location: shoes.php");   
                     //this header fuction will redirect to the other page. If we mention the correct location. It will not show the confirmation message.       
                 }
 

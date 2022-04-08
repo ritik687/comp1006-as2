@@ -50,7 +50,7 @@
 
                require "includes/database.php";
 
-               $sql ="SELECT * FROM shoes INNER JOIN brands ON shoes.brandId = brands.brandId";
+               $sql ="SELECT * FROM shoes INNER JOIN brands ON shoes.brandId = brands.brandId INNER JOIN colors ON shoes.colorId=colors.colorId";
                
               //  in this we are fetching the shoes but also fetching the related brand to each shoe with the help of the primary key that is brandId
               // this INNER JOIN will join one table with the another table based on a foreign key, primary key relationship
