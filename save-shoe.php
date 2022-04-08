@@ -3,7 +3,8 @@
     $title='Saving Shoe details....';
     require 'includes/header.php';
 
-    
+    try
+    {
     // capture form inputs from the POST array and store each one in variable
     $shoeName = $_POST['shoeName'];
     //echo "Movie shoeName: $shoeName"; 
@@ -120,6 +121,12 @@
                     // header("Location: shoes.php");   
                     //this header fuction will redirect to the other page. If we mention the correct location. It will not show the confirmation message.       
                 }
+    }
+
+    catch(Exception $error)
+    {
+      header('location:error.php');
+    }
 
      
         
