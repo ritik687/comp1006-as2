@@ -53,12 +53,39 @@
           </ul>
 
             <ul class="navbar-nav ms-auto gap-1">
-              <li class="nav-item">
-                <a class="btn btn-warning nav-link" href="register.php">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="btn btn-success nav-link text-white" href="login.php">Login</a>
-              </li>
+              <?php
+               // access the current session
+                      // what we want to find out is if the user is logged in or not
+
+                      session_start();
+
+                      // if the user is not logged in, user is anonymous we will print register and login links
+                      if(empty($_SESSION['username']))
+                      {
+                        echo' <li class="nav-item">
+                        <a class="btn btn-warning nav-link" href="register.php">Register</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="btn btn-success nav-link text-white" href="login.php">Login</a>
+                      </li>';
+                      }
+
+                      else{
+                        // if user is logged in, showing their email address in the navigation bar, and also adding the logout link.
+
+                        echo' <li class="nav-item">
+                        <a class="btn btn-warning nav-link" href="#">'.$_SESSION['username'].'</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="btn btn-success nav-link text-white" href="logout.php">Logout</a>
+                      </li>';
+
+
+                      }
+              
+              
+              ?>
+             
             </ul>
   </div>
   </div>

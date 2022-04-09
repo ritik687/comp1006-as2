@@ -39,7 +39,7 @@ else{
     // if passwords match, store user identity in a SESSION OBJECT; redirect user to the movies page
     //we must call session_start() before using sessin variables in PHP
     session_start();
-    $_session['username']= $username;
+    $_SESSION['username']= $username;
     $db = null;
     header('location:shoes.php');
 
