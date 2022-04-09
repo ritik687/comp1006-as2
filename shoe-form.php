@@ -227,7 +227,7 @@ catch(Exception $error)
                 <input name="shoeId" id="shoeId" value="<?php echo $shoeId; ?>" type="hidden">
                 
                 
-                <button class="btn btn-primary">Save</button>
+                <button class=" offset-1  btn btn-primary">Save</button>
                 
             </form>
 

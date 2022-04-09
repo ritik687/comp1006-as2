@@ -18,12 +18,12 @@
 
  
         <!--  Required attribute is not used because some brands are already there in the shoe Details form. If we entered the same brand then it might cause mess problem. -->
-        <form  method="post" action="save-brand.php" class="form-floating">
+        <form  method="post" action="save-brand.php" >
 
-            <fieldset class="mb-3 row">
-                <label for="brandName" class="col-sm-8 col-form-label">Brand:</label>
+            <fieldset class="row mb-3">
+                <label for="brandName" class="col-sm-1 col-form-label">Brand:</label>
 
-                <div class="col-sm-8"> 
+                <div class="col-sm-3"> 
                     <input name="brandName" id="brandName" placeholder="any brand"  maxlength="100"  required oninvalid="this.setCustomValidity('Brand Name is Required')"    oninput="setCustomValidity('')" >
                     <!-- oninput will see if user enter something then it will not display error message( please enter valid brand)    BONUS POINT WORK-->
                 </div>
@@ -32,17 +32,17 @@
 
 
 
-            <fieldset class="mb-3 row">
-                <label for="color" class="col-sm-8 col-form-label">Color:</label>
+            <fieldset class="row mb-3">
+                <label for="color" class="col-sm-1 col-form-label">Color:</label>
 
-                <div class="col-sm-8">
+                <div class="col-sm-3">
                 <input name="color" id="color" placeholder="colour"  maxlength="10"  required oninvalid="this.setCustomValidity('Colour  is Required')"    oninput="setCustomValidity('')" >
                 </div>
             </fieldset>
 
         
 
-            <button class="offset-0    btn btn-warning    btn-md    p-2">Save</button>
+            <button class="offset-1    btn btn-warning    btn-md    p-2">Save</button>
 
             
 

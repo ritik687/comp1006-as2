@@ -1,9 +1,11 @@
 
 <?php
 
+
 $title='Saving Brand';
 require 'includes/header.php';
-
+        try
+        {        
 
                 // storing the values entered in the form in variables
                 $brandName = $_POST['brandName'];
@@ -181,10 +183,19 @@ require 'includes/header.php';
                     $msg =" Brand Saved";
                     echo $msg;
 
+            
+
 
                     // used header function to redirect to the location
                     // header("Location: shoe-form.php");  
             }
+
+        }
+
+        catch(Exception $error){
+            header('location:error.php');
+
+        }
 
 
      ?>
