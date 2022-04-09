@@ -54,10 +54,12 @@
 
             <ul class="navbar-nav ms-auto gap-1">
               <?php
-               // access the current session
+               
+                       // access the current session
                       // what we want to find out is if the user is logged in or not
-
-                      session_start();
+                      if(session_status() == PHP_SESSION_NONE){
+                        session_start();
+                        }
 
                       // if the user is not logged in, user is anonymous we will print register and login links
                       if(empty($_SESSION['username']))
