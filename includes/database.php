@@ -12,6 +12,7 @@ $pass ='y4O4M_hDnR';
 
   // debugging
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  // echo "<p>Successfully connected to the database:".$dbName."</p>";
   // echo "<p>Successfully connected to the Database ".$dbName."</p>";
 
 // }

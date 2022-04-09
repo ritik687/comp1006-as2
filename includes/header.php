@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,32 +28,38 @@
   <!-- scripts.js  for deletion confirmation -->
   <script src="js/scripts.js" type="text/javascript" defer></script>
 
+
+
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body class="text-center">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+    </svg>
   <div class="container-fluid">
-  <a class="navbar-brand" href="index.php">
-    PHP Locker
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <a class="navbar-brand" href="index.php">
+          PHP Locker
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ">
-      <li class="nav-item active">
-        <a class="nav-link" href="shoes.php">Collection</a>
-      </li>
-    </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="register.php">Register</a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="login.php">Login</a>
-        </li>
-      </ul>
+          <ul class="navbar-nav ">
+            <li class="nav-item active">
+              <a class="nav-link" href="shoes.php">Collection</a>
+            </li>
+          </ul>
+
+            <ul class="navbar-nav ms-auto gap-1">
+              <li class="nav-item">
+                <a class="btn btn-warning nav-link" href="register.php">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-success nav-link text-white" href="login.php">Login</a>
+              </li>
+            </ul>
   </div>
   </div>
 </nav>
