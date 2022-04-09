@@ -47,6 +47,7 @@ if($ok){
 
   // we are going to check whether the above query return the user or not [$user = $cmd->fetch();] . if this query return the user our user will not be null means if username doesnot exist in the database, this variable $user should be null
   if($user){
+     
      echo '<p class = "alert alert-warning">User already exists.</p>';
      // we are not going to use $ok because we are just going to stop right here
      $db = null;
@@ -74,7 +75,7 @@ if($ok){
  /* now try to check in the database the passwords records, they are all hashed. If the usernames are different with the same passwords. But the hashed passwords will be different means getting unique hash value for each.*/
 
 // redirect to login
-header('location:login.php');
+// header('location:login.php');
 
 }
 

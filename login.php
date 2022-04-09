@@ -4,17 +4,28 @@
 ?>
 
 <main  class="form-signin" style="width: 100%; max-width:330px; padding: 15px; margin: auto; padding-top: 100px;">
-  <form action="" method="POST">
-   
-    <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
 
+
+  <form action="login-validate.php" method="POST">
+   
+    <h1 class="h3 mb-3 fw-normal text-center text-primary">LOGIN</h1>
+    <?php
+    // click the login in the nav bar, you will see in the url there is no parameter. thats why we use empty....
+     if(empty($_GET['invalid']))
+     {
+         echo '<h6 class ="alert alert-secondary">Please enter your credentials</h6>';
+     }        
+     else{
+         echo '<h6 class ="alert alert-warning">Invalid Login</h6>';
+     }
+    ?>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="margin-bottom: -1px; border-bottom-right-radius:0; border-bottom-left-radius:0;">
-      <label for="floatingInput">Email address</label>
+      <input name="username"type="username" class="form-control" id="username" placeholder="username" style="margin-bottom: -1px; border-bottom-right-radius:0; border-bottom-left-radius:0;">
+      <label for="username">Username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;" >
-      <label for="floatingPassword">Password</label>
+      <input name="password"type="password" class="form-control" id="password" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;" >
+      <label for="password">Password</label>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>

@@ -8,6 +8,14 @@
   <form action="save-registration.php" method="POST">
    
     <h1 class="h3 mb-3 fw-normal text-center text-primary">User Registration</h1>
+    <!-- <?php
+    // click the login in the nav bar, you will see in the url there is no parameter. thats why we use empty....
+     if(!empty($_GET['invalid']))
+     {
+         echo '<h6 class ="alert alert-secondary">Registration Saved</h6>';
+     }        
+     
+    ?> -->
     
   
 
@@ -27,7 +35,7 @@
     </div>
 
     <div class="form-floating">
-      <input name="confirm" type="password" class="form-control" id="confirm" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;"   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required oninvalid="this.setCustomValidity('Please match the password')"    oninput="setCustomValidity('')">
+      <input name="confirm" type="password" class="form-control" id="confirm" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;"   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required oninvalid="this.setCustomValidity('Please enter the same password')"    oninput="setCustomValidity('')">
       <label for="confirm">Confirm Password</label>
     </div>
 
