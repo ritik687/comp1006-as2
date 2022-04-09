@@ -1,5 +1,5 @@
 <?php
-    //authentication check. this will not give access to the user who has not logged in.
+    //auth check. this will not give access to the user who has not logged in.
     require 'includes/auth-check.php';
     $title='Shoe Form';
     require 'includes/header.php';
@@ -228,7 +228,24 @@ catch(Exception $error)
                 <input name="shoeId" id="shoeId" value="<?php echo $shoeId; ?>" type="hidden">
                 
                 
-                <button class=" offset-1  btn btn-primary">Save</button>
+                <?php
+                    if(isset($shoeId))
+                    {
+                        if(is_numeric($shoeId))
+                        {
+                           echo '<button class=" offset-1  btn btn-primary">Update</button>'; 
+                        }
+
+                         
+                             
+                        
+                    }
+
+                    else{
+                        echo '<button class=" offset-1  btn btn-primary">Save</button>';
+                    }
+                ?>
+                
                 
             </form>
 

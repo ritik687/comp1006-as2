@@ -13,10 +13,10 @@
     // click the login in the nav bar, you will see in the url there is no parameter. thats why we use empty....
      if(empty($_GET['invalid']))
      {
-         echo '<h6 class ="alert alert-secondary">Please enter your credentials</h6>';
+         echo '<h6 class ="alert alert-secondary text-center">Please enter your credentials</h6>';
      }        
      else{
-         echo '<h6 class ="alert alert-warning">Invalid Login</h6>';
+         echo '<h6 class ="alert alert-warning text-center">Invalid Login</h6>';
      }
     ?>
     <div class="form-floating">
@@ -27,7 +27,11 @@
       <input name="password"type="password" class="form-control" id="password" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;" >
       <label for="password">Password</label>
     </div>
-
+    <div class="checkbox mb-3 text-center">
+      <label>
+        <input  type="checkbox" onclick="showHidePasswordLogin()"> Show Password
+      </label>
+    </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <p  class="mt-5 mb-3 text-muted text-center">Not Registered yet? <a href="register.php">Click here</a></p>
   </form>

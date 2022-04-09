@@ -7,7 +7,7 @@ require 'includes/header.php';
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$confirm = $_POST['confirm'];
+$confirm = $_POST['confirmPassword'];
 
 $ok = true;
 
