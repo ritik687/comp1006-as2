@@ -1,5 +1,6 @@
 <?php
-
+    //authentication check. this will not give access to the user who has not logged in.
+    require 'includes/auth-check.php';
     $title='Shoe Form';
     require 'includes/header.php';
     
