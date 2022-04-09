@@ -3,9 +3,9 @@
       require 'includes/header.php';
 
 ?>
-    <main class="container"> 
-             <h1 class = "display-1  text-white"> PHP FootLocker</h1>
-            <p class="lead  text-white-50"> COMP1006-Assignment 1</p>
+    <main class="container" ;> 
+             <h1 class = "display-1  text-white text-center"> PHP FootLocker</h1>
+            <p class="lead  text-white-50 text-center"> COMP1006-Assignment 1</p>
             <br>
             <br>
              <!-- <p>Check out my top 5 collections <a href="shoes.php">list of Collections</a>!</p>

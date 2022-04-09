@@ -35,7 +35,8 @@ select * from brands;
 
 
 
-CREATE TABLE users (
+CREATE TABLE registeredUsers (
 userId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(50) NOT NULL,
+email Varchar(50) NOT null,
 password VARCHAR(255) NOT NULL);
