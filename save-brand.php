@@ -4,6 +4,10 @@
 
 $title='Saving Brand';
 require 'includes/header.php';
+
+?>
+
+<?php
         try
         {        
 
@@ -16,49 +20,26 @@ require 'includes/header.php';
 
 
 
-            if(empty(trim($brandName)))
-            {
-                 echo "Brand Name should not be empty";
-                $ok= false;
+            // if(empty(trim($brandName)))
+            // {
+            //      echo "Brand Name should not be empty";
+            //     $ok= false;
                 
                 
-            }
+            // }
 
-            else if(strlen($brandName) > 100)
+            if(strlen($brandName) > 100)
             {
                echo "Brand Name should be smaller than 100 characters";
                 $ok =false;
             }
 
             
-            // if(empty(trim($color)))
-            // {
-            //     echo "<br>Color field should not be empty";
-            //     $ok= false;
-            // }
-
-            // else if(strlen($color) > 100)
-            // {
-            //     echo "<br>Color field should be smaller than 100 characters";
-            //     $ok=false;
-            // }
-
-
-            
-
-           
-            
-
-
-
+          
 
             if($ok==true)
             {
-                // //connect to the database
-                //     $db = new PDO('mysql:host=172.31.22.43;dbname=Ram200495974','Ram200495974','y4O4M_hDnR');
-                //     // if you have an issue connecting database, this is going to print out like a debug trace in your browser
-                //     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                // //set up the sql insert command to add a new brand and color :this indicates the placeholder
+             
 
 
                 require "includes/database.php";
@@ -88,71 +69,51 @@ require 'includes/header.php';
 
 
                     // confirmation message
-                    // $msg =" Brand Saved";
+                    $msg =" Information Saved";
 
 
                     // used header function to redirect to the location
-                    // header("Location: shoe-form.php");  
+                    header("Location: shoe-form.php");  
             }
+        }
+        catch(Exception $error)
+        {
+            header('location:error.php');
+        }
+
+?>
 
 
-     ?>
 
 <?php
+try{
                 // storing the values entered in the form in variables
                 // $brandName = $_POST['brandName'];
                 $color = $_POST['color'];
 
-                $ok = true;
+                // $ok = true;
 
 
 
-
-            // if(empty(trim($brandName)))
-            // {
-            //      echo "Brand Name should not be empty";
-            //     $ok= false;
-                
-                
-            // }
-
-            // else if(strlen($brandName) > 100)
-            // {
-            //    echo "Brand Name should be smaller than 100 characters";
-            //     $ok =false;
-            // }
 
             
-            if(empty(trim($color)))
-            {
-                echo "<br>Color field should not be empty";
-                $ok= false;
-            }
+            // if(empty(trim($color)))
+            // {
+            //     echo "<br>Color field should not be empty";
+            //     $ok= false;
+            // }
 
-            else if(strlen($color) > 100)
+            if(strlen($color) > 100)
             {
                 echo "<br>Color field should be smaller than 100 characters";
                 $ok=false;
             }
 
 
-            
-
-           
-            
-
-
-
 
             if($ok==true)
             {
-                // //connect to the database
-                //     $db = new PDO('mysql:host=172.31.22.43;dbname=Ram200495974','Ram200495974','y4O4M_hDnR');
-                //     // if you have an issue connecting database, this is going to print out like a debug trace in your browser
-                //     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                // //set up the sql insert command to add a new brand and color :this indicates the placeholder
-
-
+             
                 require "includes/database.php";
 
                     $sql = "INSERT INTO colors(color) VALUES(:color)";
@@ -180,14 +141,14 @@ require 'includes/header.php';
 
 
                     // confirmation message
-                    $msg =" Brand Saved";
+                    $msg =" Information Saved";
                     echo $msg;
 
             
 
 
                     // used header function to redirect to the location
-                    // header("Location: shoe-form.php");  
+                    header("Location: shoe-form.php");  
             }
 
         }

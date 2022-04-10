@@ -42,8 +42,8 @@
             <th style="text-align: center">Size</th>
             <th style="text-align: center">Colour</th>
             <th style="text-align: center">Brand</th>
-            <th style="text-align: center"></th>
-            <th style="text-align: center"> Actions</th>'
+            <th style="text-align: center">Images</th>
+            <th style="text-align: center">Actions</th>'
             ;
               }
           ?>
@@ -89,7 +89,7 @@
 
                       if(!empty($shoe['image']))
                       {
-                        echo '<img src ="img/'.$shoe['image'].'" alt="Shoe Image" class="thumb" />';
+                        echo '<img src ="imageDirectory/'.$shoe['image'].'" alt="Shoe Image" class="thumb" />';
 
                       }
                       echo '</td>';
@@ -104,12 +104,12 @@
                       <td style="text-align: center">' .$shoe['size']. '</td>
                       <td style="text-align: center">' .$shoe['color']. '</td>
                       <td style="text-align: center">' .$shoe['brandName']. '</td>
-                      <td>';
+                      <td style="text-align:center">';
 
                       
                       if(!empty($shoe['image']))
                       {
-                        echo '<img src ="img/'.$shoe['image'].'" alt="Shoe Image" class="thumb" />';
+                        echo '<img src ="imageDirectory/'.$shoe['image'].'" alt="Shoe Image" class="thumb" />';
 
                       }
                       echo '</td>';

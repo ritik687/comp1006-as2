@@ -143,10 +143,10 @@ catch(Exception $error)
 
                            echo '<div class="form-check    form-check-inline">'; 
                            echo '<input name= colorId   id=colorId  class="form-check-input"  type= radio  required  value= "'.$color['colorId'].'" checked>';
-                         echo '<label for=brandId  class="form-check-label">'.$color['colorId'].'</label>';
+                         echo '<label for=colorId  class="form-check-label">'.$color['color'].'</label>';
                            echo '</div>';
                         }
-                        else{
+                        if($color['color']!=null && $color['colorId'] != $colorId){
                             echo '<div class="form-check    form-check-inline">'; 
                             echo '<input name= colorId   id=colorId  class="form-check-input"  type= radio  required value= "'.$color['colorId'].'">';
                             echo '<label for=colorId  class="form-check-label">'.$color['color'].'</label>';
@@ -202,7 +202,7 @@ catch(Exception $error)
                             echo '<option selected value= "'.$brand['brandId'].'">' .  $brand['brandName'] . '</option>';   
                         } 
                            
-                            else{
+                        if($brand['brandId']!=$brandId  && $brand['brandName']!=null){
                            echo '<option value= "'.$brand['brandId'].'">' .  $brand['brandName'] . '</option>';
                             }
                          
@@ -237,7 +237,7 @@ catch(Exception $error)
                 <?php
                        if(!empty($image))
                        {
-                          echo '<fieldset class="row mb-3"><img src ="img/'.$image.'" alt="Shoe Image" class="offset-1"></fieldset>';
+                          echo '<fieldset class="row mb-3"><img src ="imageDirectory/'.$image.'" alt="Shoe Image" class="offset-1 thumb"></fieldset>';
 
                        }
                        ?>
@@ -252,7 +252,7 @@ catch(Exception $error)
 
 
                    <!-- this will prevent the image deleting when we editing the shoe-form without even touching the image.-->
-                <input name="currentImage" id="currentImage" value="<php echo $image?>" type="hidden">
+                <input name="currentImage" id="currentImage" value="<?php echo $image;?>" type="hidden">
                 
                 <?php
                     if(isset($shoeId))

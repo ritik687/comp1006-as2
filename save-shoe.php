@@ -79,7 +79,7 @@
           $name =session_id().'-'.$name;
 
           // move from cache to img with the new unique name
-          move_uploaded_file($image['tmp_name'],'img/'.$name);
+          move_uploaded_file($image['tmp_name'],'imageDirectory/'.$name);
 
         }
         else
@@ -174,7 +174,7 @@
     ?>
     
     <br>
-    <a href="shoes.php">Click here to display all the movies</a>
+    <a href="shoes.php">Click here to display all the shoes</a>
     
 </body>
 </html>

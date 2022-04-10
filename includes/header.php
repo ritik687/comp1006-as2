@@ -34,7 +34,10 @@
 <body >
 <nav class="navbar navbar-expand-lg navbar-light">
 
-<?php
+
+    
+  <div class="container-fluid">
+  <?php
                
                // access the current session
               // what we want to find out is if the user is logged in or not
@@ -53,10 +56,9 @@
                  </svg>';
                  }
 ?>
-    
-  <div class="container-fluid">
+        <a class="navbar-brand"></a>
         <a class="navbar-brand" href="index.php">
-          PHP Locker
+          PHPLocker
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

@@ -14,7 +14,7 @@
     <br>
 <h1>Brand Information</h1>
 
-<h5 class="alert alert-warning">Please complete all fields</h5>
+<h5 class="alert alert-warning">None of the fields are required. Its your choice because these information will be added in Shoe Form.</h5>
 
  
         <!--  Required attribute is not used because some brands are already there in the shoe Details form. If we entered the same brand then it might cause mess problem. -->
@@ -24,7 +24,7 @@
                 <label for="brandName" class="col-sm-1 col-form-label">Brand:</label>
 
                 <div class="col-sm-3"> 
-                    <input name="brandName" id="brandName" placeholder="any brand"  maxlength="100"  required oninvalid="this.setCustomValidity('Brand Name is Required')"    oninput="setCustomValidity('')" >
+                    <input name="brandName" id="brandName" placeholder="any brand"  maxlength="100"  >
                     <!-- oninput will see if user enter something then it will not display error message( please enter valid brand)    BONUS POINT WORK-->
                 </div>
             
@@ -36,13 +36,12 @@
                 <label for="color" class="col-sm-1 col-form-label">Color:</label>
 
                 <div class="col-sm-3">
-                <input name="color" id="color" placeholder="colour"  maxlength="10"  required oninvalid="this.setCustomValidity('Colour  is Required')"    oninput="setCustomValidity('')" >
+                <input name="color" id="color" placeholder="colour"  maxlength="10"   >
                 </div>
             </fieldset>
 
         
-
-            <button class="offset-1    btn btn-warning    btn-md    p-2">Save</button>
+            <button class="offset-1    btn btn-warning    btn-md    p-2">Add</button>
 
             
 
