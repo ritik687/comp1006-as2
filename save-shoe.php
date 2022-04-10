@@ -17,6 +17,8 @@
 
     $shoeId = $_POST['shoeId'];
 
+    $image= $_FILES['image']; // this is not null so uploaded movie poster if any available.
+
     
   
     
@@ -51,7 +53,35 @@
       echo "Size must be 3.5 or greater";
       $ok=false;
     }
- 
+
+        //validating image uploading
+        if(!empty($image)){
+          // get the file name
+          $name = $image['name'];
+
+          // get the temp location
+          $tmpName = $image['tmp_name'];
+
+          //check the file if it is png or jpg/jpeg. this image/jpeg is for both jpg or jpeg.
+
+          if((mime_content_type($tmpName)!="image/png") && (mime_content_type($tmpName) !="image/jpeg"))
+          {
+              echo 'Image must be in .png or .jpg format';
+              $ok=false;
+          }
+
+
+          // if the file valid, generate a unique name using the session object to prevent overwriting. We dont wanna overwrite any file that alrady exists with the same name.
+          // this gives us the unique id of each browser session. we will just append this on to the beginning of file name.
+          // eg. poster.png => a3445f34asdf-poster.png
+          // two users cant share the same session_id.
+          $name =session_id().'-'.$name;
+
+          // move from cache to img with the new unique name
+          move_uploaded_file($image['tmp_name'],'img/'.$name);
+
+      }
+    
      
 
 
@@ -68,7 +98,7 @@
                     if(empty($shoeId))
                     {
                     /* setup an SQL INSERT command with placeholders for our three values : indicates a placeholder  or parameter*/
-                    $sql = "INSERT INTO shoes(shoeName,size,brandId,colorId) VALUES(:shoeName,:size,:brandId,:colorId)";
+                    $sql = "INSERT INTO shoes(shoeName,size,brandId,colorId,image) VALUES(:shoeName,:size,:brandId,:colorId,:image)";
                     }
 
                     else{

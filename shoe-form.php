@@ -89,7 +89,7 @@ catch(Exception $error)
 
             
             <!-- by default method="get" if we do not use "post" -->
-            <form method="post" action="save-shoe.php">
+            <form method="post" action="save-shoe.php" enctype="multipart/form-data">
 
                 <!-- first fieldset -->
                 <fieldset class="row mb-3">
@@ -222,6 +222,16 @@ catch(Exception $error)
                     </select>
                     </div>
                 </fieldset>
+
+                <fieldset class="row mb-3">
+                    <label for="image" class="col-sm-1 col-form-label">Image:</label>
+
+                    <div class="col-sm-3">
+                    <input name="image" id="image"  class="form-control"   type="file"  accept=".png,.jpg,.jpeg">
+                    </div>
+                </fieldset>
+
+
 
                 <!-- this line is added will only be visible in the view page source section because the type is hidden 
                 And moreover we are going to change the existing shoe, so we need the id of the shoe on the save-shoe.php-->
