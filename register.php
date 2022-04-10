@@ -7,7 +7,7 @@
 <main  class="form-signin" style="width: 100%; max-width:330px; padding: 10px; margin: auto; padding-top: 100px; ">
   <form action="save-registration.php" method="POST">
    
-    <h1 class="h3 mb-3 fw-normal text-center text-primary">User Registration</h1>
+    <h1 class="h3 mb-3 fw-normal text-center ">User Registration</h1>
     <!-- <?php
     // click the login in the nav bar, you will see in the url there is no parameter. thats why we use empty....
      if(!empty($_GET['invalid']))
@@ -46,12 +46,12 @@
     </div> -->
     <div class="checkbox mb-3 text-center">
       <label>
-        <input  type="checkbox" value="remember-me" onclick="showHidePasswordRegister()"> Show Password
+        <input type="checkbox" value="remember-me" onclick="showHidePasswordRegister()"> Show Password
       </label>
     </div>
 
     <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="return comparePasswords()">Register</button>
-    <p  class="mt-5 mb-3 text-muted text-center">Already have account?<a href="login.php">Click here</a></p>
+    <p  class="mt-5 mb-3  text-center">Already have account?<a href="login.php" class="text-white">Click here</a></p>
     
   </form>
 </main>
@@ -59,4 +59,7 @@
 
     
   </body>
+  <?php
+   require 'includes/footer.php'
+?>
 </html>

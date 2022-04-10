@@ -64,7 +64,7 @@ catch(Exception $error)
 <body>
 
 
-<a href="shoes.php" class="p-4">View the List
+<a href="shoes.php" class="p-4" style="color: cyan;">View the List
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
   <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
 </svg>
@@ -74,14 +74,15 @@ catch(Exception $error)
 <br>
 
 
-<a href="brand-form.php"  class="p-4">
+
+<a href="brand-form.php"  class="p-4" style="color: cyan;">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
   <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
 </svg>Go to Brand Form
 </a>
         <main class="container">
             <br>
-        <h1>Shoe Details</h1>
+        <h1 class="headings">Shoe Details</h1>
 
             
             <!--  one more heading added -->
@@ -94,7 +95,7 @@ catch(Exception $error)
 
                 <!-- first fieldset -->
                 <fieldset class="row mb-3">
-                    <label for="shoeName" class="col-sm-1 col-form-label">Shoe:</label>
+                    <label for="shoeName" class="col-sm-1 col-form-label headings">Shoe:</label>
 
                     <div class="col-sm-3">
                     <input name="shoeName" id="shoeName" class="form-control" required maxlength="100"  placeholder="Name" oninvalid="this.setCustomValidity('Shoe Name is Required')"    oninput="setCustomValidity('')"   value="<?php echo $shoeName?>"/> 
@@ -104,7 +105,7 @@ catch(Exception $error)
 
                 <!-- second fieldset -->
                 <fieldset class="row mb-3">
-                    <label for="size" class="col-sm-1 col-form-label">Size:</label>
+                    <label for="size" class="col-sm-1 col-form-label headings">Size:</label>
 
                     <div class="col-sm-3">
                     <input name="size" id="size"  class="form-control" required  type="number"   min="6.5" max="15" step="0.5" placeholder="US only"  oninvalid="this.setCustomValidity('Size is Required')"    oninput="setCustomValidity('')"    value="<?php echo $size?>">
@@ -116,7 +117,7 @@ catch(Exception $error)
                 <!-- third fieldset -->
                 <fieldset class="row mb-3">
                       
-                      <legend class="col-form-label col-sm-1 pt-0">Colors:</legend>
+                      <legend class="col-form-label col-sm-1 pt-0 headings">Colors:</legend>
                       <div class="col-sm-3">
 
 
@@ -143,13 +144,13 @@ catch(Exception $error)
 
                            echo '<div class="form-check    form-check-inline">'; 
                            echo '<input name= colorId   id=colorId  class="form-check-input"  type= radio  required  value= "'.$color['colorId'].'" checked>';
-                         echo '<label for=colorId  class="form-check-label">'.$color['color'].'</label>';
+                         echo '<label for=colorId  class="form-check-label sub-headings">'.$color['color'].'</label>';
                            echo '</div>';
                         }
                         if($color['color']!=null && $color['colorId'] != $colorId){
                             echo '<div class="form-check    form-check-inline">'; 
                             echo '<input name= colorId   id=colorId  class="form-check-input"  type= radio  required value= "'.$color['colorId'].'">';
-                            echo '<label for=colorId  class="form-check-label">'.$color['color'].'</label>';
+                            echo '<label for=colorId  class="form-check-label sub-headings">'.$color['color'].'</label>';
                             echo '</div>';
 
                         }
@@ -179,7 +180,7 @@ catch(Exception $error)
 
                 <!-- fourth fieldset -->
                 <fieldset class="row mb-3">
-                    <label for="brandId" class="col-sm-1 col-form-label">Brand:</label>
+                    <label for="brandId" class="col-sm-1 col-form-label headings">Brand:</label>
 
                     <div class="col-sm-3">
                     <select name="brandId" id="brandId" class="form-control form-select" aria-label="Default select example" required>
@@ -225,7 +226,7 @@ catch(Exception $error)
                 </fieldset>
 
                 <fieldset class="row mb-3">
-                    <label for="image" class="col-sm-1 col-form-label">Image:</label>
+                    <label for="image" class="col-sm-1 col-form-label headings">Image:</label>
 
                     <div class="col-sm-3">
                     <input  type="file" name="image" id="image" class="form-control" accept=".png,.jpg,.jpeg">
@@ -259,7 +260,7 @@ catch(Exception $error)
                     {
                         if(is_numeric($shoeId))
                         {
-                           echo '<button class=" offset-1  btn btn-primary">Update</button>'; 
+                           echo '<button class=" offset-1  btn btn-warning">Update</button>'; 
                         }
 
                          
@@ -268,7 +269,7 @@ catch(Exception $error)
                     }
 
                     else{
-                        echo '<button class=" offset-1  btn btn-primary">Save</button>';
+                        echo '<button class=" offset-1  btn btn-warning">Save</button>';
                     }
                 ?> 
                 
@@ -283,5 +284,9 @@ catch(Exception $error)
     
 
 </body>
+
+<?php
+   require 'includes/footer.php'
+?>
 
 </html>

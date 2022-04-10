@@ -9,4 +9,7 @@
       <p>Something went wrong on our end. Please use one of the links above then try again</p>
 </main>
 </body>
+<?php
+   require 'includes/footer.php'
+?>
 </html>

@@ -177,4 +177,7 @@
     <a href="shoes.php">Click here to display all the shoes</a>
     
 </body>
+<?php
+   require 'includes/footer.php'
+?>
 </html>

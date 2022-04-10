@@ -33,6 +33,7 @@
                     //show message to the user
                     echo '<h1>Shoe deleted</h1>
                                 <a href="shoes.php" class"alert alert-info">Back to Shoe List</a> ';
+                                header('location:shoes.php');
                 }
 
                 else{

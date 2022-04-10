@@ -5,16 +5,16 @@
 ?>
     
 
-    <h1 class = "display-4 text-center" ><u>Shoes Collections</u></h1>
+    <h1 class = "display-4 text-center"><u>Shoes Collections</u></h1>
     <br>
     <br>
 
     <div class="d-grid gap-2 col-2  mx-auto">
-    <a href="index.php" class="btn btn-info" type="button" >Home Page</a>
+    <a href="index.php" class="btn btn-info" type="button"style="background-color: #e3f2fd;" >Home Page</a>
     <?php
     // we dont need to call session_start() because we already called it in the header above.
     if(!empty($_SESSION['username'])){
-    echo '<a href="brand-form.php" class="btn btn-info" type="button" >Add other brands & colours</a><a href="shoe-form.php" class="btn btn-info" type="button" >Add new FootWear</a>';
+    echo '<a href="brand-form.php" class="btn btn-info" type="button" style="background-color: #e3f2fd;">Add other brands & colours</a><a href="shoe-form.php" class="btn btn-info" type="button" style="background-color: #e3f2fd;">Add new FootWear</a>';
     }
     ?>
     
@@ -24,7 +24,7 @@
   
 
     <main class="container">
-    <table class="table table-striped table-hover  table-borderless ">
+    <table class="table  table-warning table-striped table-hover  table-borderless ">
       <thead>
         <tr>
         <?php 
@@ -148,4 +148,7 @@
     </main> 
 
 </body>
+<?php
+   require 'includes/footer.php'
+?>
 </html>

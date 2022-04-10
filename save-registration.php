@@ -82,4 +82,7 @@ if($ok){
 ?>
 
 </body>
+<?php
+   require 'includes/footer.php'
+?>
 </html>

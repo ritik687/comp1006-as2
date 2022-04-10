@@ -8,7 +8,7 @@
 
   <form action="login-validate.php" method="POST">
    
-    <h1 class="h3 mb-3 fw-normal text-center text-primary">LOGIN</h1>
+    <h1 class="h3 mb-3 fw-normal text-center">LOGIN</h1>
     <?php
     // click the login in the nav bar, you will see in the url there is no parameter. thats why we use empty....
      if(empty($_GET['invalid']))
@@ -33,11 +33,14 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p  class="mt-5 mb-3 text-muted text-center">Not Registered yet? <a href="register.php">Click here</a></p>
+    <p  class="mt-5 mb-3  text-center">Not Registered yet? <a href="register.php" class="text-white">Click here</a></p>
   </form>
 </main>
 
 
     
   </body>
+  <?php
+   require 'includes/footer.php'
+?>
 </html>
