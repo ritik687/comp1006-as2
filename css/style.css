@@ -11,6 +11,11 @@ body{
   font-family: 'IBM Plex Serif', serif;
   }
 
+  .thumb{
+    width: 50px;
+  
+  }
+
   .welcome{
     margin: 50px auto;
     width: 600px;

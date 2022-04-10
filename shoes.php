@@ -32,7 +32,8 @@
             echo ' <th>Shoes</th>
             <th>Size</th>
             <th>Colour</th>
-            <th>Brand</th>';
+            <th>Brand</th>
+            <th></th>'; 
         }
         
             // we dont need to call session_start() because we already called it in the header above.
@@ -41,7 +42,9 @@
             <th style="text-align: center">Size</th>
             <th style="text-align: center">Colour</th>
             <th style="text-align: center">Brand</th>
-            <th style="text-align: center"> Actions</th>';
+            <th style="text-align: center"></th>
+            <th style="text-align: center"> Actions</th>'
+            ;
               }
           ?>
         
@@ -81,7 +84,17 @@
                       <td>' .$shoe['shoeName']. '</td>
                       <td>' .$shoe['size']. '</td>
                       <td>' .$shoe['color']. '</td>
-                      <td>' .$shoe['brandName']. '</td>';
+                      <td>' .$shoe['brandName']. '</td>
+                      <td>';
+
+                      if(!empty($shoe['image']))
+                      {
+                        echo '<img src ="img/'.$shoe['image'].'" alt="Shoe Image" class="thumb" />';
+
+                      }
+                      echo '</td>';
+
+
                     }
 
                       if(!empty($_SESSION['username']))
@@ -91,7 +104,17 @@
                       <td style="text-align: center">' .$shoe['size']. '</td>
                       <td style="text-align: center">' .$shoe['color']. '</td>
                       <td style="text-align: center">' .$shoe['brandName']. '</td>
-                      <td style="text-align: center"> <a href="shoe-form.php?shoeId='. $shoe['shoeId'] . '" 
+                      <td>';
+
+                      
+                      if(!empty($shoe['image']))
+                      {
+                        echo '<img src ="img/'.$shoe['image'].'" alt="Shoe Image" class="thumb" />';
+
+                      }
+                      echo '</td>';
+
+                      echo '<td style="text-align: center"> <a href="shoe-form.php?shoeId='. $shoe['shoeId'] . '" 
                       class="btn btn-outline-primary" type="button"  ">Edit</a>
                       
                       <a href="delete-shoe.php?shoeId=' . $shoe['shoeId'] .'" 

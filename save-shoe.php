@@ -54,8 +54,9 @@
       $ok=false;
     }
 
+
         //validating image uploading
-        if(!empty($image)){
+        if(!empty($image['name'])){
           // get the file name
           $name = $image['name'];
 
@@ -80,7 +81,12 @@
           // move from cache to img with the new unique name
           move_uploaded_file($image['tmp_name'],'img/'.$name);
 
-      }
+        }
+        else
+        {
+          // now new image uploaded. If this shoe already has an image attached, keep the name so it does not get deleted 
+          $name=$_POST['currentImage'];
+        }
     
      
 
@@ -103,7 +109,7 @@
 
                     else{
 
-                      $sql = "UPDATE shoes SET shoeName=:shoeName, size=:size, brandId= :brandId, colorId=:colorId WHERE shoeId= :shoeId";
+                      $sql = "UPDATE shoes SET shoeName=:shoeName, size=:size, brandId= :brandId,image=:image, colorId=:colorId WHERE shoeId= :shoeId";
                       //make sure u should have the where clause. and also number of tokens in the update statement should match the no of parameters that we binding
                     }
                    
@@ -126,6 +132,10 @@
                     $cmd->bindParam(':size',$size, PDO::PARAM_STR); // there is nothing decimal in this case, we have to str only
                     $cmd->bindParam(':brandId',$brandId, PDO::PARAM_INT);
                     $cmd->bindParam(':colorId',$colorId, PDO::PARAM_INT);
+
+                    // very dangerous error
+                    // if we dont upload the image, then it will not give error becaue we have taken this null. image value could be empty or null which is fine
+                    $cmd->bindParam(':image',$name,PDO::PARAM_STR,100);
 
                     if(!empty($shoeId))
                     {

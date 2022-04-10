@@ -12,6 +12,7 @@
     $size = null;
     $brandId =null;
     $colorId=null;
+    $image =null;
 
 
         // if we add a new shoe there will be no shoeId for that purpose we use this if statment or if by chance shoe id is any character.
@@ -40,7 +41,7 @@
                 
                 $brandId = $shoe['brandId'];
                 $colorId =$shoe['colorId'];
-
+                $image= $shoe['image'];
 
 
 
@@ -227,16 +228,31 @@ catch(Exception $error)
                     <label for="image" class="col-sm-1 col-form-label">Image:</label>
 
                     <div class="col-sm-3">
-                    <input name="image" id="image"  class="form-control"   type="file"  accept=".png,.jpg,.jpeg">
+                    <input  type="file" name="image" id="image" class="form-control" accept=".png,.jpg,.jpeg">
                     </div>
                 </fieldset>
+
+                
+                <!--  if a shoe has a image attached through the browse we can see the image through the edit link. -->
+                <?php
+                       if(!empty($image))
+                       {
+                          echo '<fieldset class="row mb-3"><img src ="img/'.$image.'" alt="Shoe Image" class="offset-1"></fieldset>';
+
+                       }
+                       ?>
+
+                
 
 
 
                 <!-- this line is added will only be visible in the view page source section because the type is hidden 
                 And moreover we are going to change the existing shoe, so we need the id of the shoe on the save-shoe.php-->
                 <input name="shoeId" id="shoeId" value="<?php echo $shoeId; ?>" type="hidden">
-                
+
+
+                   <!-- this will prevent the image deleting when we editing the shoe-form without even touching the image.-->
+                <input name="currentImage" id="currentImage" value="<php echo $image?>" type="hidden">
                 
                 <?php
                     if(isset($shoeId))
@@ -254,7 +270,7 @@ catch(Exception $error)
                     else{
                         echo '<button class=" offset-1  btn btn-primary">Save</button>';
                     }
-                ?>
+                ?> 
                 
                 
             </form>
