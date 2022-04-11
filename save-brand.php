@@ -73,7 +73,7 @@ require 'includes/header.php';
 
 
                     // used header function to redirect to the location
-                    header("Location: shoe-form.php");  
+                    echo '<script>location.href="shoe-form.php";</script>';
             }
         }
         catch(Exception $error)
@@ -148,13 +148,13 @@ try{
 
 
                     // used header function to redirect to the location
-                    header("Location: shoe-form.php");  
+                    echo '<script>location.href="shoe-form.php";</script>';  
             }
 
         }
 
         catch(Exception $error){
-            header('location:error.php');
+            echo '<script>location.href="error.php";</script>';
 
         }
 

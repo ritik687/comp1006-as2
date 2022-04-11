@@ -33,7 +33,7 @@
                     //show message to the user
                     echo '<h1>Shoe deleted</h1>
                                 <a href="shoes.php" class"alert alert-info">Back to Shoe List</a> ';
-                                header('location:shoes.php');
+                                echo '<script>location.href="shoes.php";</script>';
                 }
 
                 else{
@@ -52,7 +52,7 @@
     catch(Exception $error)
         {
             // an error happened so redirect to the error page 
-            header('location:error.php');
+            echo '<script>location.href="error.php";</script>';
         }
 
 // redirect again to the page shoes.php

@@ -26,21 +26,26 @@
                         <div class="carousel-item active">
                         <img class="d-block w-100" src="img/imageC-2.jpg" alt="First slide">
                           <div class="carousel-caption d-none d-md-block">
+                            
                             <h5>Welcome to PHP😊Locker</h5>
-                            <p>This site was built for the COMP1006 using LAMP Stack</p>
+                            <p>This site was built to perform CRUD operations on database using PHP scripting.</p>
                           </div>                
                         </div> 
 
                           <div class="carousel-item">
                             <img class="d-block w-100" src="img/imageC-3.jpg" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
-                            <h5>Shoes transform your body language and attitude.</h5>
-                            <p>Lets click this  to show you whether 404.error is working or not?<a href="something.php" class="btn btn-outline-danger">404</a></p>
+                            <h5></h5>
+                            <p>Shoes transform your body language and attitude...</p>
                           </div>  
                           </div>
 
                           <div class="carousel-item">
                             <img class="d-block w-100" src="img/imageC-4.jpg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                            <h5></h5>
+                            <p>Lets click this  to show you whether 404.error is working or not?<a href="something.php" style="color: red;">404</a></p>
+                          </div>
                           </div>
                     </div>
 

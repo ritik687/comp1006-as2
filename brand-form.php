@@ -14,7 +14,7 @@
     <br>
 <h1 class="headings">Brand Information</h1>
 
-<h5 class="alert alert-info">None of the fields are required. Its your choice because these information will be added in Shoe Form.</h5>
+<h5 class="alert alert-info">None of the fields are required. Its your choice because these information will be added in Shoe Form.<br> You can try to use only one field and add it.</h5>
 
  
         <!--  Required attribute is not used because some brands are already there in the shoe Details form. If we entered the same brand then it might cause mess problem. -->
@@ -36,7 +36,7 @@
                 <label for="color" class="col-sm-1 col-form-label headings">Color:</label>
 
                 <div class="col-sm-3">
-                <input name="color" id="color" placeholder="colour"  maxlength="10"   >
+                <input name="color" id="color" placeholder="colour"  maxlength="100"   >
                 </div>
             </fieldset>
 

@@ -260,7 +260,7 @@ catch(Exception $error)
                     {
                         if(is_numeric($shoeId))
                         {
-                           echo '<button class=" offset-1  btn btn-warning">Update</button>'; 
+                           echo '<button class=" offset-1  btn btn-warning">Update</button> <a href="shoes.php" class="btn btn-primary ">Cancel</a>'; 
                         }
 
                          
@@ -269,7 +269,10 @@ catch(Exception $error)
                     }
 
                     else{
-                        echo '<button class=" offset-1  btn btn-warning">Save</button>';
+                        echo '<div><button class=" offset-1   btn btn-warning">Save</button> <a href="shoes.php" class="btn btn-primary ">Cancel</a></div>';
+
+
+                     
                     }
                 ?> 
                 

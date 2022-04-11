@@ -67,7 +67,7 @@
 
           if((mime_content_type($tmpName)!="image/png") && (mime_content_type($tmpName) !="image/jpeg"))
           {
-              echo 'Image must be in .png or .jpg format';
+              echo '<p class="text-white">Image must be in .png or .jpg format</p>';
               $ok=false;
           }
 
@@ -156,7 +156,7 @@
 
                     // show a confirmation message 
                     
-                    echo "Shoe Saved";
+                    // echo "Shoe Saved";
 
                     // // bonus point work
                     // header("Location: shoes.php");   
@@ -174,7 +174,7 @@
     ?>
     
     <br>
-    <a href="shoes.php">Click here to display all the shoes</a>
+    <a href="shoes.php" class="text-white">Click here to display all the shoes</a>
     
 </body>
 <?php
