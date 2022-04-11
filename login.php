@@ -20,11 +20,11 @@
      }
     ?>
     <div class="form-floating">
-      <input name="username"type="username" class="form-control" id="username" placeholder="username" style="margin-bottom: -1px; border-bottom-right-radius:0; border-bottom-left-radius:0;">
+      <input name="username"type="username" class="form-control" id="username" placeholder="username" style="margin-bottom: -1px; border-bottom-right-radius:0; border-bottom-left-radius:0;" required>
       <label for="username">Username</label>
     </div>
     <div class="form-floating">
-      <input name="password"type="password" class="form-control" id="password" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;" >
+      <input name="password"type="password" class="form-control" id="password" placeholder="Password"  style="margin-bottom: 10px;  border-top-left-radius: 0; border-top-right-radius: 0;" required>
       <label for="password">Password</label>
     </div>
     <div class="checkbox mb-3 text-center">
