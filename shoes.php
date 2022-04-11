@@ -135,7 +135,7 @@
 
               catch(Exception $error)
               {
-                 header('location:error.php');
+                echo '<script>location.href="error.php";</script>';
               }
 
 

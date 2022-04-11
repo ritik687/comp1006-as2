@@ -1,6 +1,6 @@
 <?php
 /**this is the hidden page, the users will never see this page so we dont actually even need our header */
-
+try{
 // capture login form inputs
   $username =$_POST['username'];
   $password =$_POST['password'];
@@ -44,6 +44,12 @@ else{
     header('location:shoes.php');
 
   }
+}
+}
+
+catch(Exception $error)
+{
+  header('location:error.php');
 }
 
 

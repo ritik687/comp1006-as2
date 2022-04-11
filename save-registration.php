@@ -2,7 +2,7 @@
 $title = "Saving your information...";
 require 'includes/header.php';
 
-
+try{
 // capture form inputs
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -76,6 +76,11 @@ if($ok){
 
 // redirect to login
 // header('location:login.php');
+
+}
+}
+catch( Exception $error){
+  echo '<script>location.href="error.php";</script>';
 
 }
 
